@@ -20,6 +20,20 @@ namespace W19_WebApi.Controllers
             return "bla-bla-bla";
         }
 
+        // GET api/Values/GetString
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("GetListOfString")]
+        public List<string> GetListOfString()
+        {
+            List<string> listOfString = new List<string>();
+            listOfString.Add("Hello json");
+            listOfString.Add("I am Mike");
+
+            return listOfString;
+        }
+
+
         // POST api/Values/PostString
         [AllowAnonymous]
         [HttpPost]
@@ -30,6 +44,16 @@ namespace W19_WebApi.Controllers
             return Ok();
         }
 
+
+        // POST api/Values/PostListOfString
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("PostListOfString")]
+        public IHttpActionResult PostListOfString([FromBody]List<string> jsonListOfString)
+        {
+            Console.WriteLine(jsonListOfString);
+            return Ok();
+        }
 
         // GET api/values
         public IEnumerable<string> Get()
