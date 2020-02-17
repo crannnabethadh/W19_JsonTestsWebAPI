@@ -20,7 +20,7 @@ namespace W19_WebApi.Controllers
             return "bla-bla-bla";
         }
 
-        // GET api/Values/GetString
+        // GET api/Values/GetListOfString
         [AllowAnonymous]
         [HttpGet]
         [Route("GetListOfString")]
@@ -28,7 +28,7 @@ namespace W19_WebApi.Controllers
         {
             List<string> listOfString = new List<string>();
             listOfString.Add("Hello json");
-            listOfString.Add("I am Mike");
+            listOfString.Add("Happy St. Valentines day <3!");
 
             return listOfString;
         }
