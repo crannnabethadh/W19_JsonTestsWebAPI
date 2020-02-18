@@ -59,6 +59,8 @@ namespace W19_WebApi.Controllers
         public string GetPlayerDateJoined()
         {
             string authenticatedAspNetUserId = RequestContext.Principal.Identity.GetUserId();
+            // SELECT Id FROM dbo.AspNetUsers WHERE token = 'bearer xxxx';
+            
             using (IDbConnection cnn = new ApplicationDbContext().Database.Connection)
             {
                 string sql = $"SELECT DateJoined FROM dbo.Players WHERE Id LIKE '{authenticatedAspNetUserId}'";
